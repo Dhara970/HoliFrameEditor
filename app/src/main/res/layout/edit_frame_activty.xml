@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/color_toolbar"
+            android:minHeight="?attr/actionBarSize"
+            app:titleTextColor="@color/white"
+
+            />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ll_bottomview"
+        android:layout_below="@id/appbar"
+
+        android:layout_centerInParent="true">
+
+
+        <RelativeLayout
+            android:id="@+id/miss_main_frm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="false"
+            android:layout_centerInParent="true"
+            android:background="@color/white">
+
+
+
+                <com.xiaopo.flying.sticker.StickerView
+                    android:id="@+id/stickerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlzoomimge"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:visibility="visible">
+
+
+                        <com.easystudio.rotateimageview.RotateZoomImageView
+                            android:id="@+id/ivZoom"
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+
+                            android:minWidth="150dp"
+                            android:minHeight="150dp"
+
+                            android:scaleType="fitXY" />
+
+
+
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/miss_iv_frm"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        tools:src="@drawable/frame_10"
+
+                        />
+
+
+                </com.xiaopo.flying.sticker.StickerView>
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <!--  <RelativeLayout
+          android:id="@+id/miss_main_frm"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:layout_above="@id/ll_bottomview"
+          android:layout_below="@id/appbar"
+          android:gravity="center"
+
+          android:layout_marginLeft="30dp"
+          android:layout_marginRight="30dp"
+          android:layout_centerInParent="true"
+          android:background="@color/white">
+
+          <RelativeLayout
+
+              android:layout_width="wrap_content"
+              android:gravity="center"
+              android:layout_height="match_parent"
+              android:background="@color/white">
+
+
+              <com.xiaopo.flying.sticker.StickerView
+                  android:id="@+id/stickerview"
+                  android:layout_width="wrap_content"
+                  android:layout_height="match_parent"
+                  android:visibility="visible">
+
+
+                  <RelativeLayout
+                      android:id="@+id/rlzoomimge"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+
+
+                      >
+
+                      <com.easystudio.rotateimageview.RotateZoomImageView
+                          android:id="@+id/ivZoom"
+                          android:layout_width="250dp"
+                          android:layout_height="250dp"
+                          android:adjustViewBounds="true"
+                          android:minWidth="150dp"
+                          android:src="@drawable/sticker_22"
+                          android:minHeight="150dp" />
+
+                  </RelativeLayout>
+
+                  <ImageView
+                      android:id="@+id/miss_iv_frm"
+                      android:layout_width="wrap_content"
+                      android:layout_height="match_parent"
+                      android:adjustViewBounds="true"
+                      android:layout_gravity="center"
+                      tools:src="@drawable/frame_10"
+
+                      />
+
+
+              </com.xiaopo.flying.sticker.StickerView>
+          </RelativeLayout>
+
+
+      </RelativeLayout>-->
+
+
+    <LinearLayout
+        android:id="@+id/llFrame"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_above="@id/ll_bottomview"
+        android:layout_gravity="bottom"
+        android:background="@color/black_tra"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/value_5"
+        android:paddingRight="@dimen/value_5"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvframe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/value_5"
+
+            android:layout_marginTop="@dimen/value_5"
+            android:layout_marginBottom="@dimen/value_5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSticker"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_above="@id/ll_bottomview"
+        android:layout_gravity="bottom"
+        android:background="@color/black_tra"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/value_5"
+        android:paddingRight="@dimen/value_5"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSticker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/value_5"
+            android:layout_marginTop="@dimen/value_5"
+            android:layout_marginBottom="@dimen/value_5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/miss_llSeek"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_above="@id/ll_bottomview"
+        android:layout_gravity="bottom"
+        android:background="@color/black_tra"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/value_5"
+        android:paddingRight="@dimen/value_5"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Contrast    "
+                android:textColor="@android:color/white" />
+
+            <SeekBar
+                android:id="@+id/miss_seekBarContrast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:maxHeight="6dp"
+                android:progressDrawable="@drawable/ic_seek_color_progress"
+                android:thumb="@drawable/ic_thumb" />
+
+            <TextView
+                android:id="@+id/miss_txtContrastP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@android:color/primary_text_dark" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/miss_llSeekBright"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_above="@id/ll_bottomview"
+        android:layout_gravity="bottom"
+        android:background="@color/black_tra"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/value_5"
+        android:paddingRight="@dimen/value_5"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brightness"
+                android:textColor="@android:color/white" />
+
+            <SeekBar
+                android:id="@+id/miss_seekBarBright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:maxHeight="6dp"
+                android:progressDrawable="@drawable/ic_seek_color_progress"
+                android:thumb="@drawable/ic_thumb" />
+
+            <TextView
+                android:id="@+id/miss_txtBrightP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50"
+                android:textColor="@android:color/primary_text_dark" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSeekColor"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_above="@id/ll_bottomview"
+        android:layout_gravity="bottom"
+        android:background="@color/black_tra"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/value_5"
+        android:paddingRight="@dimen/value_5"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color"
+                android:textColor="@android:color/white" />
+
+            <SeekBar
+                android:id="@+id/seekBarColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:maxHeight="6dp"
+                android:progressDrawable="@drawable/ic_seek_color_progress"
+                android:thumb="@drawable/ic_thumb" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/miss_llSeekColorfilter"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_above="@id/ll_bottomview"
+        android:layout_gravity="bottom"
+        android:background="@color/black_tra"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/value_5"
+        android:paddingRight="@dimen/value_5"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter"
+                android:textColor="@android:color/white" />
+
+            <SeekBar
+                android:id="@+id/seekBarColorfilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:maxHeight="6dp"
+                android:progressDrawable="@drawable/ic_seek_color_progress"
+                android:thumb="@drawable/ic_thumb" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/miss_llSeekOpacity"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_above="@id/ll_bottomview"
+        android:layout_gravity="bottom"
+        android:background="@color/black_tra"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/value_5"
+        android:paddingRight="@dimen/value_5"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Opacity"
+                android:textColor="@android:color/white" />
+
+            <SeekBar
+                android:id="@+id/miss_seekBarOpacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:maxHeight="6dp"
+                android:progressDrawable="@drawable/ic_seek_color_progress"
+                android:thumb="@drawable/ic_thumb" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/value_10" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottomview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+
+                android:paddingTop="@dimen/value_10"
+                android:paddingBottom="@dimen/value_5">
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:mrl_rippleColor="@color/appTrans2"
+                    app:mrl_rippleHover="true">
+
+                    <LinearLayout
+                        android:id="@+id/LlFrame"
+                        android:layout_width="65dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:padding="@dimen/value_5"
+
+                            android:src="@drawable/m_frame" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/value_5"
+                            android:singleLine="true"
+                            android:text="Frame"
+                            android:textColor="@color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/llGallery"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:padding="@dimen/value_5"
+                            android:src="@drawable/m_gallery"
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/value_5"
+                            android:singleLine="true"
+                            android:text="Gallery"
+                            android:textColor="@color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/llCamera"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:padding="@dimen/value_5"
+                            android:src="@drawable/camera" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/value_5"
+                            android:singleLine="true"
+                            android:text="Camera"
+                            android:textColor="@color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/llColorFilter"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:padding="@dimen/value_5"
+
+                            android:src="@drawable/m_color" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/value_5"
+                            android:singleLine="true"
+                            android:text="Color"
+                            android:textColor="@color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/llColorFilter1"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:padding="@dimen/value_5"
+                            android:src="@drawable/m_filter" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/value_5"
+                            android:singleLine="true"
+                            android:text="Filters"
+                            android:textColor="@color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/miss_iv_text"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:padding="@dimen/value_5"
+                            android:src="@drawable/m_text" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/value_5"
+                            android:singleLine="true"
+                            android:text="Text"
+                            android:textColor="@color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/miss_iv_sticker"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:padding="@dimen/value_5"
+                            android:src="@drawable/sticker1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/value_5"
+                            android:singleLine="true"
+                            android:text="Sticker"
+                            android:textColor="@color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/llRotate"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:padding="@dimen/value_5"
+                            android:src="@drawable/m_rotate" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/value_5"
+                            android:singleLine="true"
+                            android:text="Rotate"
+                            android:textColor="@color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/miss_iv_flip"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_flips"
+                            app:tint="@color/blue" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/value_5"
+                            android:singleLine="true"
+                            android:text="Flip"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/miss_iv_contrast"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:padding="@dimen/value_5"
+                            android:src="@drawable/m_contrast" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/value_5"
+                            android:singleLine="true"
+                            android:text="Contrast"
+                            android:textColor="@color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+
+                <com.balysv.materialripple.MaterialRippleLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/miss_iv_opacity"
+                        android:layout_width="65dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="1"
+                            android:padding="@dimen/value_5"
+                            android:src="@drawable/m_opacity" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/value_5"
+                            android:singleLine="true"
+                            android:text="Opacity"
+                            android:textColor="@color/black"
+                            android:visibility="visible" />
+                    </LinearLayout>
+                </com.balysv.materialripple.MaterialRippleLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

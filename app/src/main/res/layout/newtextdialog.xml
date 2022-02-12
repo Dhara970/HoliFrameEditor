@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/color_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_background"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edit_new_text_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:ems="100"
+            android:hint="Add Text here "
+            android:maxLines="2"
+            android:padding="15dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/font"
+                android:layout_width="150dp"
+                android:backgroundTint="@color/black"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="15dp" />
+
+            <ImageView
+                android:id="@+id/ivColor"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/color" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/value_10"
+            android:gravity="bottom|center"
+            android:layout_marginLeft="@dimen/value_10"
+            android:layout_marginRight="@dimen/value_10"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/dialog_background"
+                android:padding="15dp"
+                android:text="CANCEL"
+
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_20" />
+
+            <Button
+                android:id="@+id/btnDone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+              android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/dialog_background"
+                android:padding="15dp"
+                android:text="Done"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_20" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

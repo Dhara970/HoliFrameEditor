@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="fontcategory">
+
+        <item>BLACKJAR.TTF</item>
+
+        <item>BLKCHCRY.TTF</item>
+
+        <item>constanb.TTF</item>
+
+        <item>font3.ttf</item>
+
+        <item>font5.ttf</item>
+
+        <item>font6.ttf</item>
+
+        <item>font8.ttf</item>
+
+        <item>font16.ttf</item>
+
+        <item>font17.ttf</item>
+
+        <item>font20.ttf</item>
+
+        <item>font29.ttf</item>
+
+        <item>font30.ttf</item>
+
+        <item>font32.ttf</item>
+
+        <item>font34.ttf</item>
+
+
+
+    </array>
+</resources>

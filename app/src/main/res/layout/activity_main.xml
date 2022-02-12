@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context="com.photoeditor.holiframe.HomeActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+      >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/appbar"
+
+            >
+
+            <FrameLayout
+                android:id="@+id/fl_adplaceholder"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/bg">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/value_10"
+                    android:elevation="@dimen/value_10"
+                    app:cardCornerRadius="25dp">
+
+                    <ImageView
+                        android:id="@+id/ivbanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/holi" />
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/txtappname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fl_adplaceholder"
+                android:gravity="center"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/txtappname"
+                app:layout_constraintTop_toBottomOf="@id/fl_adplaceholder">
+
+                <ImageView
+                    android:id="@+id/ivGallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="false"
+                    android:src="@drawable/gallery"
+                    app:layout_constraintEnd_toStartOf="@id/ivcreation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    />
+
+                <ImageView
+
+                    android:id="@+id/ivcreation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/mycreation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivGallery"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    />
+
+
+                <ImageView
+
+                    android:id="@+id/ivrate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@id/ivcreation"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/rate"
+                    app:layout_constraintEnd_toStartOf="@id/ivshare"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivGallery" />
+
+
+                <ImageView
+
+                    android:id="@+id/ivshare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/btnshare"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivrate"
+                    app:layout_constraintTop_toBottomOf="@id/ivcreation" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>
